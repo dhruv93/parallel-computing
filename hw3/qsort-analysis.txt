@@ -1,0 +1,25 @@
+Answer the following questions:
+
+1. Analyze the data from qsort.csv. What can you infer from the data?
+
+	With an increase in size and cutoff value, time taken by sequential
+	version does not vary much, but both in_place and best_span version
+	have significant differences. 
+	Also, for sizes greater than 100,000 , in_place
+	version has similar or faster performance as compared to both
+	sequential and best_span versions.
+
+
+
+
+2. Describe how you might improve the performance of p_qsort_best_span.
+
+	By selecting a better pivot element, we can have a better load 
+	distribution during partioning. By using Hoare's partitioning
+	scheme, having two indices at the very ends of the array and 
+	moving them closer until they detect an inversion, the algorithm
+	does three times less swapping, on average.
+	Another way to improve performance is by using Median-Of-Three 
+	partioning, where the median of first, last and the middle element
+	selects the pivot item.
+
